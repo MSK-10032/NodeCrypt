@@ -15,7 +15,7 @@ function pickColor(seed) {
 // Create SVG avatar for user name
 // 为用户名生成 SVG 头像
 export function createAvatarSVG(userName) {
-	if (userName == "BA4IHR") {
+	if (userName == "BA4IHR" || userName == "CMSK") {
 		return `
 		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
