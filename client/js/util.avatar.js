@@ -1,22 +1,5 @@
-// Import dicebear avatar libraries
-// 导入 dicebear 头像库
-import * as dicebearCore from '@dicebear/core';
-import * as dicebearMicah from '@dicebear/micah';
-// Predefined background colors
-// 预设背景色数组
-const bgColors = ["f87171", "fb923c", "09acf4", "fb923c", "f472b6", "a78bfa", "34d399"];
-// Pick a color based on seed string
-// 根据种子字符串选择颜色
-function pickColor(seed) {
-	let hash = 0;
-	for (let i = 0; i < seed.length; i++) hash = seed.charCodeAt(i) + ((hash << 5) - hash);
-	return bgColors[Math.abs(hash) % bgColors.length]
-}
-// Create SVG avatar for user name
-// 为用户名生成 SVG 头像
 export function createAvatarSVG(userName) {
-	if (userName == "BA4IHR" || userName == "CMSK") {
-		return `
+	return `
 		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1080px" height="1080px" viewBox="0 0 1080 1080" enable-background="new 0 0 1080 1080" xml:space="preserve">  <image id="image0" width="1080" height="1080" x="0" y="0"
@@ -13457,10 +13440,4 @@ agAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyNS0xMi0wN1QwMzo1NzowOSswMDowMDauU7UAAAAA
 SUVORK5CYII=" />
 </svg>
 `;
-	}
-	return dicebearCore.createAvatar(dicebearMicah, {
-		seed: userName,
-		baseColor: ["f7e1c3", "f9c9b6", "f2d6cb", "f8ce8e", "eac393"],
-		backgroundColor: [pickColor(userName)]
-	}).toString()
 }
