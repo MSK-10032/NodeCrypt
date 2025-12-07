@@ -32,6 +32,132 @@
 			-o-transition: none !important;
 			transition: none !important;
 		}
+		:root {
+  /* 提供一组主题变量（深色） */
+  --bg: #071019;
+  --panel-bg: #0b1217;
+  --surface: #0f1820;
+  --muted: #9fb0c6;
+  --text: #e6eef6;
+  --accent: #3aa0ff;
+  --border: rgba(255,255,255,0.06);
+  --input-bg: rgba(255,255,255,0.03);
+  --bubble-sent: #07364a;
+  --bubble-recv: #0a1a24;
+  --danger: #ff6b6b;
+  --success: #5fe28a;
+  --glass: rgba(255,255,255,0.02);
+  --shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+/* 仅在 body 有 .dark 时启用（保证可切换） */
+body.dark {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* 基础元素覆盖 */
+body.dark, body.dark .main, body.dark .sidebar, body.dark .rightbar, body.dark .settings-sidebar {
+  background-color: transparent;
+  color: var(--text);
+}
+
+/* 标准容器 */
+body.dark .container, body.dark .main, body.dark .sidebar, body.dark .rightbar {
+  background: linear-gradient(180deg, var(--panel-bg), var(--surface));
+}
+
+/* 卡片 / 面板 */
+body.dark .flip-card, body.dark .flip-card-inner, body.dark .flip-card-front, body.dark .flip-card-back {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* 按钮 */
+body.dark button, body.dark .help-btn, body.dark .settings-btn, body.dark .send-message-btn {
+  background: var(--glass);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+body.dark button:hover {
+  background: rgba(255,255,255,0.035);
+}
+
+/* 输入框 */
+body.dark input, body.dark textarea, body.dark .input-message-input {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* 消息气泡 */
+body.dark .msg-bubble.sent {
+  background: var(--bubble-sent);
+  color: var(--text);
+}
+body.dark .msg-bubble.recv {
+  background: var(--bubble-recv);
+  color: var(--text);
+}
+
+/* 侧边栏、用户信息 */
+body.dark .sidebar-user, body.dark .rooms, body.dark .join-room {
+  background: transparent;
+  color: var(--text);
+}
+
+/* 链接与强调色 */
+body.dark a {
+  color: var(--accent);
+}
+
+/* 小图标颜色适配 */
+body.dark svg path, body.dark svg circle {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+/* 设置面板 */
+body.dark .settings-sidebar {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-left: 1px solid var(--border);
+}
+
+/* 小屏适配遮罩 */
+body.dark .mobile-sidebar-mask, body.dark .mobile-rightbar-mask {
+  background: rgba(0,0,0,0.6);
+}
+
+/* 轻微阴影 */
+body.dark .card {
+  box-shadow: var(--shadow);
+}
+
+/* 按钮（主题切换图标） */
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 6px;
+  margin-left: 8px;
+  border-radius: 6px;
+}
+.theme-toggle-btn:hover {
+  color: var(--text);
+  background: rgba(255,255,255,0.02);
+}
+
+/* 防止深色模式下的图片边框可见 */
+body.dark img {
+  filter: none;
+}
+
+/* 兼容 prefers-color-scheme：仍然尊重用户系统偏好，除非用户手动切换 */
+@media (prefers-color-scheme: dark) {
+  /* 若未主动切换，浏览器会默认走 dark 变量；这里作为补充（主要由 JS 管理） */
+}
 	</style>
 </head>
 <body class="preload dark">
