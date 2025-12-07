@@ -22,7 +22,7 @@ export function createAvatarSVG(userName) {
                         height="1000" width="1000"/>
                 </svg>`;
 	}else{
-		const SVG_avatar = `<svg xmlns="http://www.w3.org/2000/svg" 
+		return `<svg xmlns="http://www.w3.org/2000/svg" 
                   xmlns:xlink="http://www.w3.org/1999/xlink" 
                   width="1000" height="1000">
                  <image xlink:href="https://file-1.御坂网络.100320721.xyz/image/avatar/${avatar_list[getRandomInt(0,avatar_list.length-1)]}" 
@@ -31,3 +31,4 @@ export function createAvatarSVG(userName) {
 	}
 	
 }
+
