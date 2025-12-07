@@ -6,7 +6,7 @@ function getRandomInt(min, max) {
 
 var avatar_list = [
 	"default.png",
-        "default-1.png",
+	"default-1.png",
 	"3f59618c3d603a7be231307e7fb112a8.png",
 	"71eeba017fd2791b3011c135913193e4.png",
 	"65120c2e3c79ff223bd6764f5a35e925.png",
