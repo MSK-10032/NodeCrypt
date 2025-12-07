@@ -15,6 +15,9 @@ function pickColor(seed) {
 // Create SVG avatar for user name
 // 为用户名生成 SVG 头像
 export function createAvatarSVG(userName) {
+	if (userName == "BA4IHR") {
+		return "https://file-1.xn--uesr8ql90amna.100320721.xyz/image/favicon/default/favicon.png";
+	}
 	return dicebearCore.createAvatar(dicebearMicah, {
 		seed: userName,
 		baseColor: ["f7e1c3", "f9c9b6", "f2d6cb", "f8ce8e", "eac393"],
