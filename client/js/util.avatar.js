@@ -13,6 +13,17 @@ var avatar_list = [
 	"b949ff1ffa7e6d2d653e8a7eec68f0ea.png"
 ]
 
+function userRanAvatar(str, min, max) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+    }
+    hash = Math.abs(hash)
+    return Math.floor((hash % (max - min + 1)) + min);
+}
+
 export function createAvatarSVG(userName) {
 
 	if (userName == "BA4IHR" || userName == "CMSK") {
@@ -28,7 +39,7 @@ export function createAvatarSVG(userName) {
            width="1000" height="1000"
            viewBox="0 0 1000 1000">
          <image 
-           xlink:href="https://file-1.御坂网络.100320721.xyz/image/avatar/${avatar_list[getRandomInt(0,avatar_list.length-1)]}" 
+           xlink:href="https://file-1.御坂网络.100320721.xyz/image/avatar/${avatar_list[userRanAvatar(userName,0,avatar_list.length-1)]}" 
            width="1000" 
            height="1000"
            preserveAspectRatio="xMidYMid slice"/>
