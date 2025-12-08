@@ -28,11 +28,15 @@ export function createAvatarSVG(userName) {
 
 	if (userName == "BA4IHR" || userName == "CMSK") {
 		return `<svg xmlns="http://www.w3.org/2000/svg" 
-                  xmlns:xlink="http://www.w3.org/1999/xlink" 
-                  width="1000" height="1000">
-                 <image xlink:href="https://file-1.御坂网络.100320721.xyz/image/avatar/default.png" 
-                        height="1000" width="1000"/>
-                </svg>`;
+           xmlns:xlink="http://www.w3.org/1999/xlink" 
+           width="1000" height="1000"
+           viewBox="0 0 1000 1000">
+         <image 
+           xlink:href="https://file-1.御坂网络.100320721.xyz/image/avatar/default.png" 
+           width="1000" 
+           height="1000"
+           preserveAspectRatio="xMidYMid slice"/>
+        </svg>`;
 	}else{
 		return `<svg xmlns="http://www.w3.org/2000/svg" 
            xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -47,4 +51,5 @@ export function createAvatarSVG(userName) {
 	}
 	
 }
+
 
