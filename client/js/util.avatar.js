@@ -7,9 +7,9 @@ function getRandomInt(min, max) {
 var avatar_list = [
 	"default.png",
 	"default-1.png",
-	"4faf71afa986447c2d726e39be8e4b60b4b776cc8b187dcab476a94f5b1f5036.png",
-	"43ec3bfe3ceae4dd29124b8d07074f537b8e8491f939ff74fba09bf5690ef432.png",
-	"829dfbe3b0610ce32e7945bfb1c1a6b913305977eb8aed555f73a3d8b1c2ea9d.png"
+	"onc.png",
+	"onc-1.png",
+	"onc-2.png"
 ]
 
 function userRanAvatar(str, min, max) {
