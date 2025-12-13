@@ -258,7 +258,7 @@ const LANGUAGES = {
 
 // Current language
 // 当前语言
-let currentLanguage = 'en';
+let currentLanguage = 'zh';
 
 // Get translation for a key
 // 获取翻译文本
@@ -478,3 +478,4 @@ function updateMetaTags() {
 		metaTwitterDescription.content = t('meta.twitter_description', metaTwitterDescription.content);
 	}
 }
+
